@@ -19,3 +19,13 @@ public:
         return res;
     }
 };
+
+// using inbuilt functions like INT_MIN,max
+//  int s=0;
+//  int maxi=INT_MIN;
+//  for(auto i:a){
+//      s+=i;
+//      maxi=max(sum,maxi);
+//      if(s<0)s=0;
+//  }
+//  return maxi;
