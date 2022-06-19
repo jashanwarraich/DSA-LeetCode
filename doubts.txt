@@ -45,3 +45,9 @@ pair<int,int> missingAndRepeating(vector<int> &a, int n)
     
     
 }
+
+
+
+
+2. https://www.codingninjas.com/codestudio/problems/615?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=1
+MergeSort Approach
