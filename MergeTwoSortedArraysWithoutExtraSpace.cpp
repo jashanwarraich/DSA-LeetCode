@@ -1,7 +1,7 @@
 //https://leetcode.com/problems/merge-sorted-array/submissions/
 
 //GAP METHOD
-//O(n*nlog(n))
+// O(n+m)log(n+m)
 
 class Solution {
 public:
@@ -51,7 +51,8 @@ public:
 
 
 //Sorting 2nd array
-//O(log(n)*n)
+//O(nlog(n)*n)
+O(n+m)*O(mlogm))
 
 class Solution {
 public:
