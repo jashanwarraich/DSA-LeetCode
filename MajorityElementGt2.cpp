@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/majority-element/
 
 // O(n)
+//Space O1 Most Voting algo
 class Solution {
 public:
     int majorityElement(vector<int>& arr) {
