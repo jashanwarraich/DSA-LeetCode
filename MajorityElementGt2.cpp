@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/majority-element/
 
-// O(n)
+// O(n)  Boyer-Moore Majority Voting Algorithm
 //Space O1 Most Voting algo
 class Solution {
 public:
