@@ -1,0 +1,47 @@
+1.
+https://www.codingninjas.com/codestudio/problems/873366?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
+
+XOR approach
+
+#include <bits/stdc++.h> 
+
+pair<int,int> missingAndRepeating(vector<int> &a, int n)
+{
+   pair<int,int>p;
+//     int x=0,y=0;
+       int* x = (int*)malloc(sizeof(int));
+    int* y = (int*)malloc(sizeof(int));
+    int x1=a[0];
+    for(int i=1;i<n;i++){
+        x1=x1^a[i];
+    }
+    for(int i=1;i<=n;i++){
+        x1=x1^i;
+    }
+   int sb = x1 & ~(x1 - 1);
+    
+    
+       for (int i = 0; i < n; i++) {
+        if (a[i] & sb)
+            /* arr[i] belongs to first set */
+            *x = *x ^ a[i];
+ 
+        else
+            /* arr[i] belongs to second set*/
+            *y = *y ^ a[i];
+    }
+    for (int i = 1; i <= n; i++) {
+        if (i & sb)
+            /* i belongs to first set */
+            *x = *x ^ i;
+ 
+        else
+            /* i belongs to second set*/
+            *y = *y ^ i;
+    }
+//     p.first=*x;
+//     p.second=*y;
+    cout<<*x<<" "<<*y;
+    
+    
+}
