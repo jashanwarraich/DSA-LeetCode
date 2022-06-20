@@ -1,3 +1,11 @@
+Algo:
+Kadans Algo
+Boyer Moore Voting Algo
+
+
+
+
+
 1.
 https://www.codingninjas.com/codestudio/problems/873366?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
 
