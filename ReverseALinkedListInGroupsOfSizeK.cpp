@@ -1,5 +1,5 @@
 // Q33 https://leetcode.com/problems/reverse-nodes-in-k-group/
-// O((N/k)*k)
+// O((N/k)*k)= O(n)
 
 
 class Solution {
