@@ -2,6 +2,8 @@
     "files.associations": {
         "*.ejs": "html",
         "utility": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "initializer_list": "cpp",
+        "xutility": "cpp"
     }
 }
