@@ -4,6 +4,9 @@
         "utility": "cpp",
         "algorithm": "cpp",
         "initializer_list": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "deque": "cpp",
+        "queue": "cpp",
+        "vector": "cpp"
     }
 }
