@@ -1,26 +1,39 @@
+// Q75 https://www.codingninjas.com/codestudio/problems/stack-implementation-using-array_3210209
 
+// Stack class.
+class Stack {
+    int *arr;
+    int f;
+    int totalsize;
+public:
+    
+    Stack(int capacity) {
+        arr=new int[capacity];
+        totalsize=capacity;
+        f=-1;
+        
+    }
 
-//Stack implementation
+    void push(int num) {
+        arr[++f]=num;
+    }
 
-int arr[5];
-top=-1;
-
-push(x){
-    arr[++top]=x;
-}
-
-pop(){
-    top--;
-}
-
-top(){
-    return arr[top];
-}
-
-size(){
-    return top+1;
-}
-
-isEmpty(){
-    return (top==-1);
-}
+    int pop() {
+        if(f!=-1) return arr[f--];
+        else return -1;
+    }
+    
+    int top() {
+        if(f!=-1) return arr[f];
+        else return -1;
+    }
+    
+    int isEmpty() {
+        return f==-1;
+    }
+    
+    int isFull() {
+        return f==totalsize-1;
+    }
+    
+};
