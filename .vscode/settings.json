@@ -8,6 +8,7 @@
         "deque": "cpp",
         "queue": "cpp",
         "vector": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "type_traits": "cpp"
     }
 }
