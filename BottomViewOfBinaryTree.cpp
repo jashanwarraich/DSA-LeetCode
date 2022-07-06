@@ -12,7 +12,7 @@ vector<int> bottomView(BinaryTreeNode<int> * root){
         BinaryTreeNode<int> *node=q.front().first;
         int line=q.front().second;
         q.pop();
-        mpp[line]=node->data;
+        mpp[line]=node->data;    // only change this line of the BOTTOM view to get TOP View  if(mpp.find(line)==mpp.end()) mpp[line]=node->val;
         if(node->left) q.push({node->left,line-1});
         if(node->right) q.push({node->right,line+1});
     }
