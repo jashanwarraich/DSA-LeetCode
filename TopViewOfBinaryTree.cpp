@@ -3,8 +3,6 @@
 // Time: O(n)
 // Space: O(n)
 
-
-
 #include<bits/stdc++.h>
 vector<int> getTopView(TreeNode<int> *root) {
     vector<int> ans;
@@ -16,7 +14,7 @@ vector<int> getTopView(TreeNode<int> *root) {
         TreeNode<int> *node=q.front().first;
         int line=q.front().second;
         q.pop();
-        if(mpp.find(line)==mpp.end()) mpp[line]=node->val;   // only change this line of the BOTTOM view to get TOP View  (remove the if condition)
+        if(mpp.find(line)==mpp.end()) mpp[line]=node->val;   //only change this line of the BOTTOM view to get TOP View  (remove the if condition)
         if(node->left) q.push({node->left,line-1});
         if(node->right) q.push({node->right,line+1});
     }
