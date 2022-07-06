@@ -9,6 +9,7 @@
         "queue": "cpp",
         "vector": "cpp",
         "stack": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "xiosbase": "cpp"
     }
 }
