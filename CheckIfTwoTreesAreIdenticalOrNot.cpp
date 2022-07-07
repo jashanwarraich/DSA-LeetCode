@@ -1,7 +1,7 @@
 // Q121 https://leetcode.com/problems/same-tree/submissions/
 
-Time: O(n)
-Space: O(n)
+// Time: O(n)
+// Space: O(n)
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
