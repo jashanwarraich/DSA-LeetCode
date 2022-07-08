@@ -61,3 +61,8 @@ MergeSort Approach
 
 3.
 // Q23 https://www.codingninjas.com/codestudio/problems/1115652?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
+
+
+
+4.
+// Q129 https://www.codingninjas.com/codestudio/problems/invert-a-binary-tree_1281382?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
