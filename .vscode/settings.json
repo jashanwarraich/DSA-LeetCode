@@ -10,6 +10,7 @@
         "vector": "cpp",
         "stack": "cpp",
         "type_traits": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "ios": "cpp"
     }
 }
