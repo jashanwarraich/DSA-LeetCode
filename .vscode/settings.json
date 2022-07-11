@@ -11,6 +11,8 @@
         "stack": "cpp",
         "type_traits": "cpp",
         "xiosbase": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "compare": "cpp",
+        "xstddef": "cpp"
     }
 }
