@@ -13,6 +13,8 @@
         "xiosbase": "cpp",
         "ios": "cpp",
         "compare": "cpp",
-        "xstddef": "cpp"
+        "xstddef": "cpp",
+        "list": "cpp",
+        "xstring": "cpp"
     }
 }
