@@ -1,4 +1,4 @@
-// Q159 https://leetcode.com/problems/course-schedule/submissions/
+// Q159 https://www.codingninjas.com/codestudio/problems/982938?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=1
 
 // Time: O(E+V)  //BFS
 // Space: O(E+V)+O(V)+O(V)  
