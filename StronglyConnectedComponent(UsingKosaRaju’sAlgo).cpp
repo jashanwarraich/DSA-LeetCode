@@ -1,4 +1,4 @@
-// Q164 https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/
+// Q164 https://www.codingninjas.com/codestudio/problems/985311?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=1
 
 // Time: O(N+E)+O(N+E)+O(N+E)= Topo sort + Transpose + DFS on topo
 // Space: O(N+E) + O(N) + O(N)= new transpose graph + Visited + topo Stack
