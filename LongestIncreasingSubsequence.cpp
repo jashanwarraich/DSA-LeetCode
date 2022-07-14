@@ -47,3 +47,33 @@ public:
         return temp.size();
     }
 };
+
+
+
+
+
+//DP
+//Using the logic used in the MaximumSumIncreasingSubsequence
+
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& a) {
+        int n=a.size(); 
+        vector<int> msis(n,1);
+        for(int i=1;i<n;i++){
+            for(int j=0;j<i;j++){
+                if(a[i]>a[j]&&msis[i]<msis[j]+1){
+                    msis[i]=msis[j]+1;
+                }
+            }
+           }
+        int ans=msis[0];
+        for(auto it: msis)
+            ans=max(ans,it);
+        return ans;
+    
+    }
+};
+
+
