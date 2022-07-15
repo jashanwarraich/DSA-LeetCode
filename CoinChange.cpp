@@ -1,98 +1,87 @@
 // Q178 https://leetcode.com/problems/coin-change/
 
-
-
 // Recursion
-// Time: O(2^n)
+// Time: >O(2^n), Exponential
 // Space: O(n) 
-class Solution {
-    int f(int i, int j,vector<vector<int>>& g){
-        if(i==0&&j==0) return g[0][0];
-        if(i<0||j<0) return 1e9;
-        int up=g[i][j]+f(i-1,j,g);
-        int left=g[i][j]+f(i,j-1,g);
-        return min(up,left);
-    }
-public:
-    int minPathSum(vector<vector<int>>& g) {
-        int n=g.size();
-        int m=g[0].size();
-        return f(n-1,m-1,g);
-    }
-};
+#include<bits/stdc++.h>
+int f(int ind, int tar,int * a){
+        if(ind==0){
+            return (tar%a[0]==0);
+        }
+        int nt=f(ind-1,tar,a);
+        int t=0;
+        if(a[ind]<=tar)
+            t=f(ind,tar-a[ind],a);
+        return t+nt;
+ }
+
+long countWaysToMakeChange(int *a, int n, int tar)
+{
+     return f(n-1,tar,a);
+}
 
 // Memorisation
 // Time: O(N*m)
 // Space: O(N*M)+O(N) = auxiliary stack space+ dp
-class Solution {
-    int f(int i, int j,vector<vector<int>>& g,vector<vector<int>> &dp){
-        if(i==0&&j==0) return g[0][0];
-        if(i<0||j<0) return 1e9;
-        if(dp[i][j]!=-1) return dp[i][j];
-        int up=g[i][j]+f(i-1,j,g,dp);
-        int left=g[i][j]+f(i,j-1,g,dp);
-        return dp[i][j]=min(up,left);
-    }
-public:
-    int minPathSum(vector<vector<int>>& g) {
-        int n=g.size();
-        int m=g[0].size();
-        vector<vector<int>> dp(n,vector<int>(m,-1));
-        return f(n-1,m-1,g,dp);
-    }
-};
+#include<bits/stdc++.h>
+long f(int ind, int tar,int * a,vector<vector<long>> &dp){
+        if(ind==0){
+            return (tar%a[0]==0);
+        }
+    if(dp[ind][tar]!=-1) return dp[ind][tar];
+        long nt=f(ind-1,tar,a,dp);
+        long t=0;
+        if(a[ind]<=tar)
+            t=f(ind,tar-a[ind],a,dp);
+        return dp[ind][tar]=t+nt;
+ }
+
+long countWaysToMakeChange(int *a, int n, int tar)
+{
+    vector<vector<long>> dp(n,vector<long>(tar+1,-1));
+     return f(n-1,tar,a,dp);
+}
 
 // DP
 // Time: O(N*m)
 // Space: O(N*M)
-class Solution {
-public:
-    int minPathSum(vector<vector<int>>& g) {
-        int n=g.size();
-        int m=g[0].size();
-        vector<vector<int>> dp(n,vector<int>(m,0));
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(i==0&&j==0) dp[i][j]= g[0][0];
-                else{
-                    int up=INT_MAX,left=INT_MAX;
-                    if(i>0) up=g[i][j]+dp[i-1][j];
-                    if(j>0) left=g[i][j]+dp[i][j-1];
-                    dp[i][j]=min(up,left);
-                }
-            }
+#include<bits/stdc++.h>
+
+long countWaysToMakeChange(int *a, int n, int val)
+{
+    vector<vector<long>> dp(n,vector<long>(val+1,0));
+    for(int j=0;j<val+1;j++) dp[0][j]=val%a[0]==0;
+    for(int ind=1;ind<n;ind++){
+        for(int tar=0;tar<=val;tar++){
+            long nt=dp[ind-1][tar];
+            long t=0;
+            if(a[ind]<=tar)
+                t=dp[ind][tar-a[ind]];
+            dp[ind][tar]=t+nt;
         }
-        return dp[n-1][m-1];
     }
-};
+     return dp[n-1][val];
+}
 
 // TABULATION
 // Time: O(N*m)
 // Space: O(2*M)
-class Solution {
+#include<bits/stdc++.h>
 
-public:
-    int minPathSum(vector<vector<int>>& g) {
-        int n=g.size();
-        int m=g[0].size();
-        // vector<vector<int>> dp(n,vector<int>(m,0));
-        vector<int> p(m,0),c(m,0);
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(i==0&&j==0) c[j]= g[0][0];
-                else{
-                    int up=INT_MAX,left=INT_MAX;
-                    if(i>0) up=g[i][j]+p[j];
-                    if(j>0) left=g[i][j]+c[j-1];
-                    c[j]=min(up,left);
-                }
-            }
-            p=c;
+long countWaysToMakeChange(int *a, int n, int val)
+{
+    vector<long> p(val+1,0),c(val+1,0);
+    for(int j=0;j<val+1;j++) p[j]=val%a[0]==0;
+    for(int ind=1;ind<n;ind++){
+        for(int tar=0;tar<=val;tar++){
+            long nt=p[tar];
+            long t=0;
+            if(a[ind]<=tar)
+                t=c[tar-a[ind]];
+            c[tar]=t+nt;
         }
-        return p[m-1];
+        p=c;
     }
-};
+     return p[val];
+}
 
-// SINGLE ARRAY TABULATION   
-// Time: O(N*m)
-// Space: O(M)

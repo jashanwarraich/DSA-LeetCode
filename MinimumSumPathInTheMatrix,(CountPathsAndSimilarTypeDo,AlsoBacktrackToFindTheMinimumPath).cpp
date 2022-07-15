@@ -91,7 +91,3 @@ public:
         return p[m-1];
     }
 };
-
-// SINGLE ARRAY TABULATION   
-// Time: O(N*m)
-// Space: O(M)
