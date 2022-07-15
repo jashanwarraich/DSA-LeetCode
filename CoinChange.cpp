@@ -1,4 +1,4 @@
-// Q178 https://leetcode.com/problems/coin-change/
+// Q178 https://www.codingninjas.com/codestudio/problems/630471?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website
 
 // Recursion
 // Time: >O(2^n), Exponential
