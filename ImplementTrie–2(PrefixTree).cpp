@@ -85,8 +85,12 @@ class Trie{
     void erase(string &word){
         Node* node=root;
         for(int i=0;i<word.size();i++){
-            node=node->get(word[i]);
-            node->reducePrefix();
+            if(node->containsKey(word[i])){
+                node=node->get(word[i]);
+                node->reducePrefix();
+            }
+            else
+                return; 
         }
         node->deleteEnd();
     }
